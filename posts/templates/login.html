@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+    <style>
+  .content {
+
+    padding: 40px;
+
+  }
+</style>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+        <header>
+                      <p class="text-xl">Login</p>
+        </header>
+<hr style="border: 2px solid grey;">
+    <br>
+
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <button class="text-xl mr-5 hover:text-gray-900 rounded-lg hover:bg-red-200 inline-flex items-center" type="submit">Login</button><p class="text-xl mr-5 inline-flex items-center">-</p><a class="text-xl mr-5 hover:text-gray-900 rounded-lg hover:bg-green-200 inline-flex items-center" href="{% url 'signup' %}">Signup</a>
+        </form>
+
+</div>
+{% endblock content %}
+</body>
+</html>
