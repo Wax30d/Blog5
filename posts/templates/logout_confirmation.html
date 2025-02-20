@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подтверждение выхода</title>
+
+</head>
+
+<style>
+  .content {
+
+    padding: 40px;
+
+  }
+</style>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+        <header>
+                      <p class="text-xl">Logout?</p>
+        </header>
+<hr style="border: 2px solid grey;">
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">
+                <br>
+<p class="text-xl mr-5 hover:text-gray-900 rounded-lg hover:bg-red-200 inline-flex items-center">Logout</p>
+
+            </button>
+<p class="text-xl mr-5 inline-flex items-center">-</p>
+            <button><a class="text-xl mr-5 hover:text-gray-900 rounded-lg hover:bg-green-200 inline-flex items-center" href="/">Back</a></button>
+
+        </form>
+
+</div>
+{% endblock content %}
+</body>
+</html>

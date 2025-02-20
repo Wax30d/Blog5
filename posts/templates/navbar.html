@@ -15,9 +15,33 @@
         <a href="{% url 'homepage' %}" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-green-200 inline-flex items-center">
           Home
         </a>
-        <a href="{% url 'about' %}" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-pink-200 inline-flex items-center">
+        <a href="{% url 'about' %}" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-green-200 inline-flex items-center">
           About
         </a>
+        <a href="http://127.0.0.1:8000/api/" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-pink-200 inline-flex items-center">
+          Api
+        </a>
+        <a href="http://127.0.0.1:8000/swagger/" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-violet-200 inline-flex items-center">
+          Swagger
+        </a>
+        <a href="http://127.0.0.1:8000/redoc/" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-violet-200 inline-flex items-center">
+          Redoc
+        </a>
+        {% if user.is_authenticated %}
+        <a href="http://127.0.0.1:8000/logout/" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-yellow-200 inline-flex items-center">
+          Logout
+        </a>
+        <a href="http://127.0.0.1:8000/signup/" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-yellow-200 inline-flex items-center">
+          Signup
+        </a>
+        {% else %}
+        <a href="http://127.0.0.1:8000/login/" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-yellow-200 inline-flex items-center">
+          Login
+        </a>
+        <a href="http://127.0.0.1:8000/signup/" class="mr-5 hover:text-gray-900 rounded-lg hover:bg-yellow-200 inline-flex items-center">
+          Signup
+        </a>
+        {% endif %}
           <!-- This example requires Tailwind CSS v2.0+ -->
 <div x-data="{ open: false }" class="relative inline-block text-left">
   <div>
